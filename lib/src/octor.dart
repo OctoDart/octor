@@ -46,9 +46,6 @@ class Octor {
       return request.response.close();
     }
 
-    if (handler is Callable) {
-      return handler.call(request);
-    }
     return handler(request);
   }
 
