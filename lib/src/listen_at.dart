@@ -9,6 +9,9 @@ enum ListenAt {
   anyIPv6,
 }
 
+const int DEFAULT_PORT = 10080;
+const ListenAt DEFAULT_HOST = ListenAt.loopbackIPv4;
+
 class ListenAddress {
   static InternetAddress toInternetAddress(ListenAt listenAt) {
     switch (listenAt) {
@@ -25,8 +28,9 @@ class ListenAddress {
 
       case ListenAt.anyIPv6:
         return InternetAddress.anyIPv6;
-    }
 
-    throw 'Unknown parameter';
+      default:
+        throw 'Unknown parameter';
+    }
   }
 }

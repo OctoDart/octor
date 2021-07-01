@@ -1,32 +1,16 @@
-import 'dart:io';
-
 import 'package:octor/octor.dart';
 
-class GreetCallabe extends Callable {
-  String _greetable = 'World';
-
-  GreetCallabe(String greetable) {
-    if (greetable != null) _greetable = greetable;
-  }
-
-  @override
-  Future<dynamic> call(HttpRequest request) {
-    request.response.write('Hello, ${_greetable}!');
-    request.response.close();
-    return null;
-  }
-}
-
-void helloWorld(HttpRequest request) {
-  request.response.write('Hello, World!');
-  request.response.close();
-}
+import 'handlers/handlers.dart';
 
 void main() async {
   var app = Octor();
 
-  app.get('/', helloWorld);
-  app.get('/greet/John', GreetCallabe('John'));
+  app.get('/hello', helloWorld);
+  app.get('/greet/:name', Greeter());
+  app.get('/fr/greet/:name', Greeter('Bonjour'));
+  app.get('/greet/:name/async', AsyncGreeter());
+  app.get('/de/greet/:name/async', AsyncGreeter('Halo'));
+  app.any('/de/greet/:name/async', anyMethodHandler); // GET, POST, PUT, DELETE, PATCH and etc.
 
   await app.listen(port: 10080, host: ListenAt.anyIPv4);
 
