@@ -10,7 +10,7 @@ class RequestContext {
   late final Map<String, String> params;
   late dynamic body;
 
-  static create(HttpRequest request) {
+  static RequestContext create(HttpRequest request) {
     var context = RequestContext();
 
     context.request = request;
@@ -22,12 +22,14 @@ class RequestContext {
     context.query = {};
     context.body = {};
 
+    /* ToDo: parse query parameters and attach to request context
     if (request.uri.hasQuery) {
       final queryParams = request.uri.queryParametersAll.entries;
       for(var entry in queryParams) {
         //context.query[entry] = {};
       }
     }
+     */
     return context;
   }
 }
