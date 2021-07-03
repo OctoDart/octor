@@ -10,7 +10,8 @@ void main() async {
   app.get('/fr/greet/:name', Greeter('Bonjour'));
   app.get('/greet/:name/async', AsyncGreeter());
   app.get('/de/greet/:name/async', AsyncGreeter('Halo'));
-  app.any('/de/greet/:name/async', anyMethodHandler); // GET, POST, PUT, DELETE, PATCH and etc.
+  app.any('/de/greet/:name/async',
+      anyMethodHandler); // GET, POST, PUT, DELETE, PATCH and etc.
 
   await app.listen(port: 10080, host: ListenAt.anyIPv4);
 

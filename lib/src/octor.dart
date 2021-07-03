@@ -43,11 +43,13 @@ class Octor {
   Future<dynamic> _handler(HttpRequest request) {
     var context = RequestContext.create(request);
 
-    var handler = _handlers[context.method]![context.path] ?? _handlers['_']![context.path];
+    var handler = _handlers[context.method]![context.path] ??
+        _handlers['_']![context.path];
 
     if (handler == null) {
       context.response.statusCode = HttpStatus.notFound;
-      context.response.write('${request.method} ${request.uri.toString()} not found');
+      context.response
+          .write('${request.method} ${request.uri.toString()} not found');
       return context.response.close();
     }
 
@@ -114,7 +116,6 @@ class Octor {
   }
 
   Octor all(String route, dynamic handler) => any(route, handler);
-
 
   @override
   Octor noSuchMethod(Invocation invocation) {

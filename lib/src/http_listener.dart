@@ -30,7 +30,8 @@ class HttpListener {
     _server.listen(handler);
   }
 
-  static Future<HttpListener> start([int port = DEFAULT_PORT, ListenAt host = DEFAULT_HOST]) async {
+  static Future<HttpListener> start(
+      [int port = DEFAULT_PORT, ListenAt host = DEFAULT_HOST]) async {
     return HttpListener(port, host).listen();
   }
 }
