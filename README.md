@@ -2,9 +2,12 @@ Server-side framework based on dart:io:HttpServer
 
 ## Warning
 
-Package still in development.<br/>
-I don't recommend to use it in production.<br/>
-Any help is appreciated. <br/>
+Package still in development.
+
+I don't recommend to use it in production.
+
+Any help is appreciated. 
+
 Feel free to provide Pull Requests.
 
 Let's make Dart one of better languages for server-side development.
