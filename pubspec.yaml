@@ -1,6 +1,7 @@
 name: octor
 description: Server-side framework built upon dart:io:HttpServer
 version: 0.0.1
+homepage: https://github.com/OctoDart/octor
 
 environment:
   sdk: '>=2.13.0 <3.0.0'
