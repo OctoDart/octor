@@ -1,5 +1,3 @@
-library octor;
-
 import 'request_context.dart';
 
 abstract class Callable {

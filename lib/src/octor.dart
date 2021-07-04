@@ -1,5 +1,3 @@
-library octor;
-
 import 'dart:core';
 import 'dart:io';
 

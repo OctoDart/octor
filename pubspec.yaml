@@ -1,6 +1,6 @@
 name: octor
-description: Server-side framework built upon dart:io:HttpServer
-version: 0.0.1
+description: Server-side framework built upon dart:io:HttpServer. It's self contained Http framework which keeps simple by having minimal possible dependencies.
+version: 0.0.2
 homepage: https://github.com/OctoDart/octor
 
 environment:

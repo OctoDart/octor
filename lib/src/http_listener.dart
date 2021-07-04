@@ -1,5 +1,3 @@
-library octor;
-
 import 'dart:io';
 
 import 'listen_at.dart';
